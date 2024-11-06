@@ -128,7 +128,7 @@ where
                 "transform: translateX({left}px) translateY({top}px) {transform};"
             ));
         } else {
-            error!("Thaw-Binder: get_follower_placement_style return None");
+            leptos::logging::error!("Thaw-Binder: get_follower_placement_style return None");
         }
 
         content_style.set(style);

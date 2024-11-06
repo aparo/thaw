@@ -268,6 +268,8 @@ impl leptos::tachys::html::class::IntoClass for ClassList {
     async fn resolve(self) -> Self::AsyncOutput {
         self
     }
+
+    fn reset(_state: &mut Self::State) {}
 }
 
 pub enum Class {
