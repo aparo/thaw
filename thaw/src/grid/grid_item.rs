@@ -11,7 +11,7 @@ pub fn GridItem(
     column: MaybeSignal<u16>,
     /// The number of intervals to the left of the grid.
     #[prop(optional, into)]
-    offset: MaybeSignal<u16>,
+    offset: Signal<u16>,
     children: Children,
 ) -> impl IntoView {
     let grid = use_grid();

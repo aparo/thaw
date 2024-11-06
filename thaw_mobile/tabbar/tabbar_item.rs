@@ -6,7 +6,7 @@ use thaw_utils::{mount_style, StoredMaybeSignal};
 
 #[component]
 pub fn TabbarItem(
-    #[prop(into)] key: MaybeSignal<String>,
+    #[prop(into)] key: Signal<String>,
     #[prop(optional, into)] icon: Option<icondata_core::Icon>,
     children: Children,
 ) -> impl IntoView {

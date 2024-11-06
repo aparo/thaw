@@ -4,10 +4,10 @@ use thaw_utils::{class_list, mount_style, StoredMaybeSignal};
 #[component]
 pub fn MessageBar(
     #[prop(optional, into)] class: MaybeProp<String>,
-    #[prop(optional, into)] layout: MaybeSignal<MessageBarLayout>,
+    #[prop(optional, into)] layout: Signal<MessageBarLayout>,
     /// Default designs announcement presets.
     #[prop(optional, into)]
-    intent: MaybeSignal<MessageBarIntent>,
+    intent: Signal<MessageBarIntent>,
     children: Children,
 ) -> impl IntoView {
     mount_style("message-bar", include_str!("./message-bar.css"));

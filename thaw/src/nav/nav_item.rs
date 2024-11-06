@@ -7,8 +7,8 @@ use thaw_utils::{class_list, OptionModelWithValue, StoredMaybeSignal};
 pub fn NavItem(
     #[prop(optional, into)] class: MaybeProp<String>,
     #[prop(optional, into)] icon: MaybeProp<icondata_core::Icon>,
-    #[prop(into)] value: MaybeSignal<String>,
-    #[prop(optional, into)] href: Option<MaybeSignal<String>>,
+    #[prop(into)] value: Signal<String>,
+    #[prop(optional, into)] href: Option<Signal<String>>,
     children: Children,
 ) -> impl IntoView {
     let nav_drawer = NavDrawerInjection::expect_context();
@@ -103,8 +103,8 @@ pub fn NavItem(
 pub fn NavSubItem(
     #[prop(optional, into)] class: MaybeProp<String>,
     #[prop(optional, into)] icon: MaybeProp<icondata_core::Icon>,
-    #[prop(into)] value: MaybeSignal<String>,
-    #[prop(optional, into)] href: Option<MaybeSignal<String>>,
+    #[prop(into)] value: Signal<String>,
+    #[prop(optional, into)] href: Option<Signal<String>>,
     children: Children,
 ) -> impl IntoView {
     let class = MaybeProp::derive(move || {

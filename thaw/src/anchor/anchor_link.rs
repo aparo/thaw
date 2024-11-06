@@ -8,7 +8,7 @@ pub fn AnchorLink(
     #[prop(optional, into)] class: MaybeProp<String>,
     /// The content of link.
     #[prop(into)]
-    title: MaybeSignal<String>,
+    title: Signal<String>,
     /// The target of link.
     #[prop(into)]
     href: String,

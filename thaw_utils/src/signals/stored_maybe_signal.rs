@@ -65,3 +65,9 @@ impl<T: Send + Sync> From<MaybeSignal<T>> for StoredMaybeSignal<T> {
         }
     }
 }
+
+impl<T: Send + Sync> From<Signal<T>> for StoredMaybeSignal<T> {
+    fn from(value: Signal<T>) -> Self {
+        Self::Signal(value)
+    }
+}

@@ -10,28 +10,28 @@ use thaw_utils::{class_list, mount_style, OptionalProp};
 #[slot]
 pub struct NavBarLeft {
     #[prop(optional, into)]
-    class: OptionalProp<MaybeSignal<String>>,
+    class: OptionalProp<Signal<String>>,
     children: Children,
 }
 
 #[slot]
 pub struct NavBarRight {
     #[prop(optional, into)]
-    class: OptionalProp<MaybeSignal<String>>,
+    class: OptionalProp<Signal<String>>,
     children: Children,
 }
 
 #[component]
 pub fn NavBar(
-    #[prop(optional, into)] title: MaybeSignal<String>,
-    #[prop(optional, into)] left_arrow: MaybeSignal<bool>,
-    #[prop(optional, into)] left_text: OptionalProp<MaybeSignal<String>>,
+    #[prop(optional, into)] title: Signal<String>,
+    #[prop(optional, into)] left_arrow: Signal<bool>,
+    #[prop(optional, into)] left_text: OptionalProp<Signal<String>>,
     #[prop(optional)] nav_bar_left: Option<NavBarLeft>,
     #[prop(optional, into)] on_click_left: Option<Callback<ev::MouseEvent>>,
-    #[prop(optional, into)] right_text: OptionalProp<MaybeSignal<String>>,
+    #[prop(optional, into)] right_text: OptionalProp<Signal<String>>,
     #[prop(optional)] nav_bar_right: Option<NavBarRight>,
     #[prop(optional, into)] on_click_right: Option<Callback<ev::MouseEvent>>,
-    #[prop(optional, into)] class: OptionalProp<MaybeSignal<String>>,
+    #[prop(optional, into)] class: OptionalProp<Signal<String>>,
 ) -> impl IntoView {
     mount_style("nav-bar", include_str!("./nav-bar.css"));
     let theme = use_theme(Theme::light);

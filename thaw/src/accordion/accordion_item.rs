@@ -8,7 +8,7 @@ pub fn AccordionItem(
     #[prop(optional, into)] class: MaybeProp<String>,
     /// Required value that identifies this item inside an Accordion component.
     #[prop(into)]
-    value: MaybeSignal<String>,
+    value: Signal<String>,
     accordion_header: AccordionHeader,
     children: Children,
 ) -> impl IntoView {

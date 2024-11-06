@@ -6,7 +6,7 @@ use thaw_utils::{class_list, StoredMaybeSignal};
 
 #[component]
 pub fn NavCategory(
-    #[prop(into)] value: MaybeSignal<String>,
+    #[prop(into)] value: Signal<String>,
     children: Children,
     nav_category_item: NavCategoryItem,
 ) -> impl IntoView {
