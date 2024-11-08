@@ -269,7 +269,20 @@ impl leptos::tachys::html::class::IntoClass for ClassList {
         self
     }
 
-    fn reset(_state: &mut Self::State) {}
+    fn reset(state: &mut Self::State) {
+        *state = RenderEffect::new_with_value(
+            move |prev| {
+                if let Some(state) = prev {
+                    let (el, _) = &state;
+                    Rndr::remove_attribute(el, "class");
+                    state
+                } else {
+                    unreachable!()
+                }
+            },
+            state.take_value(),
+        );
+    }
 }
 
 pub enum Class {
